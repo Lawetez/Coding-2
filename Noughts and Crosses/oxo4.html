@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Noughts And Crosses</title>
+        <style>
+            .row div {
+                padding: 10px;
+                border: 1px solid black;
+                height: 30px;
+                width: 30px;
+                float: left;
+            }
+            .row {
+                clear: both;
+            }
+        </style>
+    </head>
+    <body>
+        Click to play Noughts and Crosses.<br/>
+        <div>
+            <div class="row">
+                <div onclick="place(this)"></div>
+                <div onclick="place(this)"></div>
+                <div onclick="place(this)"></div>
+            </div>
+            <div class="row">
+                <div onclick="place(this)"></div>
+                <div onclick="place(this)"></div>
+                <div onclick="place(this)"></div>
+            </div>
+            <div class="row">
+                <div onclick="place(this)"></div>
+                <div onclick="place(this)"></div>
+                <div onclick="place(this)"></div>
+            </div>
+        </div>
+        <script>
+            var currentPlayer = "O"
+            function place(box) {
+                if(box.innerText != "") return;
+                box.innerText = currentPlayer;
+                currentPlayer == "O" ? currentPlayer = "X" : currentPlayer = "O";
+            }
+        </script>
+    </body>
+</html>
